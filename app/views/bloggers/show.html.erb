@@ -1,0 +1,18 @@
+<h1>A Blogger Named <%= @blogger.name %> </h1>
+Age: <%= @blogger.age %>
+<p><%= @blogger.bio %></p>
+
+
+<h3>Likes: <%= @total_likes %></h3>
+
+<h3>Featured Post</h3>
+<%= link_to @blogger.most_likes.title, @blogger.most_likes %>
+
+<h3>Top Five Destinations</h3>
+<ol>
+    <% @blogger.top_five_destinations.each do |destination| %>
+        <li>
+            <%= destination[0] %>
+        </li>
+    <% end %>
+</ol>
